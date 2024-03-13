@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Button Click Example</title>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
   /* Optional: Add some basic styling to the button */
   #myButton {
@@ -15,20 +17,48 @@
     border: none;
     border-radius: 5px;
   }
+
+  /* Hide the video initially */
+  #myVideo {
+    display: none;
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
 </style>
 </head>
 <body>
 
-<button id="myButton">Click me</button>
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Exciting Adventure!</h5>
+      <p class="card-text">Hey there, adventurous soul! Feeling like a treasure hunter? 🏴‍☠️ Well, I've got a secret map for you! 🗺️ Follow this link to uncover the hidden Amazon treasure worth a cool 1000 bucks! 💰 But beware, you might need to outwit a few digital pirates along the way! ⚔️</p>
+      <button id="myButton" class="btn btn-primary">Click me</button>
+      <!-- Video element -->
+      <video id="myVideo" controls>
+        <source src="https://res.cloudinary.com/kakani7/video/upload/v1710351224/sc/s8b4bg99saxwdgjq6sem.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
 // Get the button element
 const button = document.getElementById('myButton');
+// Get the video element
+const video = document.getElementById('myVideo');
 
 // Add click event listener to the button
 button.addEventListener('click', function() {
-  // Display the message when button is clicked
-  alert('Who Knows?');
+  // Display the video when button is clicked
+  video.style.display = 'block';
+  // Play the video
+  video.play();
 });
 </script>
 
